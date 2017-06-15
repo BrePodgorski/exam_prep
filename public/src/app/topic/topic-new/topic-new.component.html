@@ -1,0 +1,9 @@
+<h3>Add a New Topic</h3>
+<!-- add the functionality for the form to pass data -->
+<form (submit)="addTopicInNewComponent(formData)" #formData="ngForm">
+<!-- when we add this form its going to add a new friend into out component -->
+  Topic: <input type="text" name="topic" ngModel>
+  Description: <input type="text" name="description" ngModel>
+  Category: <input type="text" name="category" ngModel>
+  <input type="submit" value="Submit">
+</form>

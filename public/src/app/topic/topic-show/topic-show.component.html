@@ -1,0 +1,19 @@
+<a href="/logout">Logout</a>
+<a href="/topics/list">Home</a>
+
+<div class = 'topic' *ngIf="topic">
+<h2>{{topic._user.name}} posted a topic:</h2>
+<h3>{{topic.topic}}</h3>
+<h4>{{topic.description}}</h4>
+<h5>Post your answer here</h5>
+
+<form (submit)="createComment(formData, topic._id)" #formData ="ngForm">
+    <input type="text" name="comment" ngModel>
+    <input type="submit" value="Comment on This">
+  </form>
+  <div class="comment" *ngFor="let comment of topic.comments" >
+    <h5>{{comment._user.name}}</h5>
+    <p>{{comment.comment}}</p>
+  </div>
+
+</div>

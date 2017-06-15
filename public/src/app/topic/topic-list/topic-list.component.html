@@ -1,0 +1,18 @@
+<!-- <a [routerLink]="['/topics/new']">Add a Topic</a> -->
+<h3 *ngIf="user">Welcome {{user.name}}</h3>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Topic</th>
+    <th>User Name</th>
+    <th>Posts</th>
+  </tr>
+  <tr class="topic" *ngFor="let topic of topics">
+    <!-- this is how you make a for loop in an html -->
+    <th>{{topic.category}}</th><th><a [routerLink]="['/topics/show', topic._id]">{{topic.topic}}</a></th><th>{{topic._user.name}}</th><th>{{topic._user.name}}</th>
+
+
+  </tr>
+</table>
+
+<app-topic-new></app-topic-new>
